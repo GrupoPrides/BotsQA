@@ -1,7 +1,13 @@
 var functionTest;
 var direct;
 var style = document.createElement('style');
+var clientAcivityId = "";
+var idConv = "";
 style.innerHTML = `
+.imgLang {
+    width:23px; 
+    height:23px;
+}
 .dropbtn {
   background-color: #3498DB;
   color: white;
@@ -15237,7 +15243,6 @@ style.innerHTML = `
                             Accept: "application/json"
                         }, this.commonHeaders())
                     }).map(function(e) {
-                        console.log(e)
                         return e.response
                     }).retryWhen(function(e) {
                         return e.mergeMap(function(e) {
@@ -15329,8 +15334,11 @@ style.innerHTML = `
                                 "Content-Type": "application/json"
                             }, t.commonHeaders())
                         }).map(function(e) {
-                            console.log("".concat(t.domain, "/conversations/").concat(t.conversationId, "/activities"));
-                            console.log(e);
+                            clientAcivityId = JSON.parse(e.request.body)
+                             idConv = clientAcivityId.from.id;
+                             clientAcivityId = clientAcivityId.channelData.clientActivityID
+                            localStorage.setItem("clienteActivityId",clientAcivityId);
+                            localStorage.setItem("idCov",idConv);
                             return e.response.id
                         }).catch(function(e) {
                             return t.catchPostError(e)
@@ -30817,6 +30825,7 @@ style.innerHTML = `
             i = t.from,
             o = (i = void 0 === i ? {} : i).id,
             a = i.role;
+           clientAcivityId = r;
         if ("typing" === t.type && "user" === a) return e;
         var s = Date.parse(t.timestamp),
             u = e.filter(function(e) {
@@ -70428,32 +70437,55 @@ style.innerHTML = `
             key: "handleLanguageButtonClick",
             value: function() {
                 var data = "";
+                var id = localStorage.getItem("idCov");
                 var texLanguage = document.getElementById("CLanguage")
+                clientAcivityId = localStorage.getItem("clienteActivityId");
                 if(localStorage.getItem("locale") == "false"){
                     data = JSON.stringify({
                     "type": "message",
+                    "channelData": {
+                        "clientActivityID": clientAcivityId 
+                        },
                     "from": {
-                    "id": "user"
+                    "id": id,
+                    "name":"",
+                    "role":"bot"
                 },
-                "text": "cambiar a español"});
+                "text": "cambiar a español",
+                "channelId":"webchat",
+                "locale":"es",
+                "textFormat":"plain"
+
+                });
                 localStorage.removeItem("locale");
                 localStorage.setItem("locale","true")
                 document.getElementById('CLanguage').src='./spain-icon.png';
                 }else{
                     data = JSON.stringify({
                     "type": "message",
+                    "channelData": {
+                        "clientActivityID": clientAcivityId 
+                        },
                     "from": {
-                    "id": "user"
+                    "id": id,
+                    "name":"",
+                    "role":"bot"
                 },
-                "text": "welcome"})
+                "text": "welcome",
+                "channelId":"webchat",
+                "locale":"en",
+                "textFormat":"plain"
+
+                })
                 localStorage.removeItem("locale");
                 localStorage.setItem("locale","false");
                 document.getElementById('CLanguage').src='./united_kingdom-icon.png';
                 }
-                
                 var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-                xmlhttp.open("POST", "https://directline.botframework.com/v3/directline/conversations/"+localStorage.getItem("conversationId") +"/activities",true);
+                xmlhttp.open("POST", "https://directline.botframework.com/v3/directline/conversations/"+localStorage.getItem("conversationId") +"/activities"), true;
                 xmlhttp.setRequestHeader("Content-Type", "application/json");
+                xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                xmlhttp.setRequestHeader("x-ms-bot-agent", "DirectLine/3.0 (directlinejs; WebChat/4.5.1 (Full))");
                 xmlhttp.setRequestHeader("Authorization", "Bearer "+ localStorage.getItem("token"));
                 xmlhttp.send(data);
                 
@@ -70530,6 +70562,7 @@ style.innerHTML = `
                     className: "Language",
                     onClick: this.handleLanguageButtonClick
                 }, i.a.createElement("img", {
+                     className: "imgLang",
                      id: "CLanguage",
                      src: "./spain-icon.png",
                      alt: "Language"
