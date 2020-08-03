@@ -5,8 +5,8 @@ var clientAcivityId = "";
 var idConv = "";
 style.innerHTML = `
 .imgLang {
-    width:23px; 
-    height:23px;
+    width:20px; 
+    height:20px;
 }
 .dropbtn {
   background-color: #3498DB;
@@ -70454,7 +70454,8 @@ style.innerHTML = `
                 "text": "cambiar a español",
                 "channelId":"webchat",
                 "locale":"es",
-                "textFormat":"plain"
+                "textFormat":"plain",
+                "Ip": "123456789"
 
                 });
                 localStorage.removeItem("locale");
@@ -70474,7 +70475,8 @@ style.innerHTML = `
                 "text": "welcome",
                 "channelId":"webchat",
                 "locale":"en",
-                "textFormat":"plain"
+                "textFormat":"plain",
+                "Ip": "123456789"
 
                 })
                 localStorage.removeItem("locale");
@@ -70558,15 +70560,16 @@ style.innerHTML = `
                 //     },"test"))
                     
                 // ),//aqui empieza language 
-                i.a.createElement("button", {
-                    className: "Language",
-                    onClick: this.handleLanguageButtonClick
-                }, i.a.createElement("img", {
-                     className: "imgLang",
-                     id: "CLanguage",
-                     src: "./spain-icon.png",
-                     alt: "Language"
-                })),
+
+                // i.a.createElement("button", {
+                //     className: "Language",
+                //     onClick: this.handleLanguageButtonClick
+                // }, i.a.createElement("img", {
+                //      className: "imgLang",
+                //      id: "CLanguage",
+                //      src: "./spain-icon.png",
+                //      alt: "Language"
+                // })),
                  i.a.createElement("button", {
                     className: "switch",
                     onClick: this.handleSwitchButtonClick
