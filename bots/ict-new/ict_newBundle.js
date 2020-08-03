@@ -70270,7 +70270,8 @@ style.innerHTML = `
                 if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
             }(this, t), (n = function(e, t) {
                 return !t || "object" !== L(t) && "function" != typeof t ? U(e) : t
-            }(this, q(t).call(this, e))).handleFetchToken = n.handleFetchToken.bind(U(n)), n.handleMaximizeButtonClick = n.handleMaximizeButtonClick.bind(U(n)), n.handleMinimizeButtonClick = n.handleMinimizeButtonClick.bind(U(n)), n.handleSwitchButtonClick = n.handleSwitchButtonClick.bind(U(n)),n.handleLanguageButtonClick = n.handleLanguageButtonClick.bind(U(n),n.handleLanguageMenuClick = n.handleLanguageMenuClick.bind(U(n)));
+                //,n.handleLanguageButtonClick = n.handleLanguageButtonClick.bind(U(n),n.handleLanguageMenuClick = n.handleLanguageMenuClick.bind(U(n)))
+            }(this, q(t).call(this, e))).handleFetchToken = n.handleFetchToken.bind(U(n)), n.handleMaximizeButtonClick = n.handleMaximizeButtonClick.bind(U(n)), n.handleMinimizeButtonClick = n.handleMinimizeButtonClick.bind(U(n)), n.handleSwitchButtonClick = n.handleSwitchButtonClick.bind(U(n));
             var r = Object(s.createStore)({}, function(e) {
                 var t = e.dispatch;
                 return function(e) {
