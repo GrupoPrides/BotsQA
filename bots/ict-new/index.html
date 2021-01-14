@@ -29,11 +29,11 @@
     <title>Web Chat: Minimize mode</title>
 
   </head>
-  <body>
+  <body onload="">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-
+    <p id="check"></p>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -46,6 +46,14 @@
     -->
     <div id="mr_sloth_root" role="main"></div>
     <script>
+      if(navigator.cookieEnabled) {
+      document.getElementById("check").innerHTML =
+      "Cookies are enabled!!";
+      } else {
+      document.getElementById("check").innerHTML =
+      "Cookies are disabled!!";
+      }
+
       // In this demo, we are using Direct Line token from MockBot.
       // To talk to your bot, you should use the token exchanged using your Direct Line secret.
       // You should never put the Direct Line secret in the browser or client app.
@@ -59,9 +67,9 @@
     }
 
     </script> 
-    <script type="text/javascript" src="https://gpbot.azureedge.net/ict/webchat/newversion/index_bundleQA.js "></script>
+    <!-- <script type="text/javascript" src="https://gpbot.azureedge.net/ict/webchat/newversion/index_bundleQA.js "></script> -->
     
     <!-- local -->
-   <!-- <script type="text/javascript" src="ict_newBundle.js"></script> -->
+   <script type="text/javascript" src="index_bundleQA.js"></script>
 </body>
 </html>
