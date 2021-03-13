@@ -35,8 +35,8 @@ function resultadoFinal() {
         var totalRespCorrectas = 0;
         if (preg1 == 'correctaPreg1') { totalRespCorrectas++; }
         if (preg2 == 'correctaPreg2') { totalRespCorrectas++; }
-        if (preg3.includes('trabajo') || preg3.includes('paz') || preg3.includes('cultura')) { totalRespCorrectas++; }
-        if (preg4.includes('cafe') || preg4.includes('maiz') || preg4.includes('café') || preg4.includes('maíz') || preg4.includes('banano') || preg4.includes('caña')) { totalRespCorrectas++; }
+        if (preg3.toLowerCase().includes('trabajo') || preg3.toLowerCase().includes('paz') || preg3.toLowerCase().includes('cultura')) { totalRespCorrectas++; }
+        if (preg4.toLowerCase().includes('cafe') || preg4.toLowerCase().includes('maiz') || preg4.toLowerCase().includes('café') || preg4.toLowerCase().includes('maíz') || preg4.toLowerCase().includes('banano') || preg4.toLowerCase().includes('caña')) { totalRespCorrectas++; }
 
         var alumno = {
             Nombre_Completo: nombre + ' ' + apellido1,
