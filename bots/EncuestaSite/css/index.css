@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    background-image: url("../img/rueda.jpg");
+    opacity: 0.95;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1920px) { 
+body{background-size: 100%;
+    padding: 50px 220px 0 220px;
+    color: #252b4e;
+    font-family: 'Sansita', sans-serif;}
+}
+footer, form{
+    background-color: white;
+}
+input, .inputt{
+    cursor: pointer;
+}
