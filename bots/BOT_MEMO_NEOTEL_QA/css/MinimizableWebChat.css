@@ -1,0 +1,217 @@
+.minimizable-web-chat > button.maximize {
+  background-color: #39C;
+  border-radius: 50%;
+  border: 2px solid #39C;
+  bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  color: White;
+  font-size: 30px;
+  height: 64px;
+  outline: 0;
+  padding: 15px;
+  position: fixed;
+  right: 20px;
+  width: 64px;
+  background-image: url("https://botmemostorage.blob.core.windows.net/memo-bot/img/AvatarMemo.png"); 
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: 300px 100px;
+  z-index: 16777271;
+  background-size: contain;
+  border: none;
+}
+
+.minimizable-web-chat > button.maximize > .red-dot {
+/* color: #EF0000; */
+color: #FFFFFF;
+/* font-size: 14px; */
+font-size: 10px;
+position: absolute;
+/* right: 12px; */
+right: -4px;
+/* top: 12px; */
+top: -4px;
+  /*new*/
+  padding: 4px 7px;
+  border-radius: 20%;
+  background-color: #FF692D;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+   /*new*/
+}
+
+.minimizable-web-chat > button.maximize:focus:not(:active),
+.minimizable-web-chat > button.maximize:hover:not(:active) {
+  background-color: #069;
+  border-color: #069;
+}
+
+.minimizable-web-chat > button.maximize:active {
+  background-color: White;
+  color: #39C;
+}
+
+.minimizable-web-chat > .chat-box {
+  background-color: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  border: 4px solid #39C;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  min-width: 320px;
+  position: fixed;
+  top: 20px;  /*normal*/
+  /*top: 40%; /*media pantalla*/
+  width: 30%;
+  overflow-y: hidden; /*for fixing problem in Edge and Firefox*/
+}
+
+.minimizable-web-chat > .chat-box.hide {
+  display: none;
+}
+
+.minimizable-web-chat > .chat-box.left {
+  left: 20px;
+  /*max-height: 60%;/*media pantalla*/
+  z-index: 16777271; 
+}
+
+.minimizable-web-chat > .chat-box.right {
+  right: 20px;
+  /*max-height: 60%;/*media pantalla*/
+  z-index: 16777271; 
+}
+
+.minimizable-web-chat > .chat-box > header {
+  background-color: #39C;
+  height: 60px;
+  display: flex;
+  /*new*/
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  /*new*/
+}
+/*new*/
+.minimizable-web-chat > .chat-box > header > * {
+  color: White;
+}
+/*new*/
+.minimizable-web-chat > .chat-box > header > .filler {
+  flex: 0 10000 100%;
+  /*new*/
+  margin: auto 20px;
+  display: flex;
+  flex-direction: column;
+  /*new*/
+}
+ /*new*/
+
+/*It is new*/
+.minimizable-web-chat > .chat-box > header > .filler > .title-username > label {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.minimizable-web-chat > .chat-box > header > .filler > .title-username > img {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+}
+.minimizable-web-chat > .chat-box > header > button {
+  width: 40px;
+  height: 40px;
+  background-color: Transparent;
+  border: 0;
+  color: White;
+  outline: 0;
+  /*new*/
+  margin-top: 5%;
+  /*new*/
+}
+
+.minimizable-web-chat > .chat-box > header > button:focus:not(:active),
+.minimizable-web-chat > .chat-box > header > button:hover:not(:active) {
+  color: rgba(255, 255, 255, .6);
+}
+
+.minimizable-web-chat > .chat-box > header > button:focus:active {
+  color: rgba(255, 255, 255, .4);
+}
+
+.minimizable-web-chat > .chat-box > .react-web-chat {
+  flex: 1;
+  /*new*/
+  background-color: white;
+  overflow-y: hidden;
+ /* box-shadow: 0 0 60px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(10px);
+  new*/
+}
+  /*new*/
+  .minimizable-web-chat > .chat-box > .connect-spinner {
+    background-color: white;
+    width: 100%;
+  }
+   
+   .minimizable-web-chat > .chat-box > .connect-spinner > .content > .icon img{
+    border: 15px;
+  }
+   /*new*/
+.avat{
+  background-size: cover; 
+  background-image: url('https://botmemostorage.blob.core.windows.net/memo-bot/img/AvatarMemo.png');
+  height: 290px;
+  display: flex;
+}
+.circleGreen{
+background-color: #41da41;   
+ padding: -0px 9px;
+border-radius: 100%;
+
+}
+/*Edge*/
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .minimizable-web-chat > .chat-box > img {
+      /* display: none; */
+      height: 100px;
+      /* margin-bottom: -13.5%; */
+      margin-bottom: -7.5%;
+  }
+  .minimizable-web-chat > button.maximize > .red-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    padding: 4px 7px;
+    border-radius: 20%;
+    background-color: #FF692D;
+    color: White;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+
+    /* color: #EF0000; */
+
+    /* font-size: 14px; */
+
+    /* right: 12px; */
+    /*right: -4px;
+    /*top: 12px; */
+    /*top: -4px;
+    /*new*/
+    /*padding: 4px 7px;
+    border-radius: 20%;
+    background-color: #FF692D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-shadow: none;
+    text-transform: none;*/
+     /*new*/
+  }
+}
+/*IE*/
+
