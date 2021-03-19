@@ -6,21 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memo Neotel FE</title>
+    <!--  inicio bot-->
     <link rel='stylesheet' href='./css/MinimizableWebChat.css' type='text/css' />
+    <!-- fin bot -->
+    <!-- inicio neotel -->
     <link rel='stylesheet' href='http://nt1.grupoprides.com/CHAT/css/webchat.css' type='text/css' />
+    <!-- fin neotel -->
 </head>
 
-<body style="background-image: url('./img/Captura.PNG');"> 
-    
+<body style="background-image: url('./img/Captura.PNG');">
+
+
+
+
+    <!-- inicio neotel -->
     <!-- <button onclick="$('#cntNeoChat').draggable();startNeoWebChat();">click me</button>
     <a href="javascript:startNeoWebChat();$('#cntNeoChat').draggable();">click me</a> -->
-    <div class="minimizable-web-chat">
-        <button class="maximize" onclick="$('#cntNeoChat').draggable();startNeoWebChat();">
-            <span class="red-dot">1</span>
-        </button>
-    </div>
-
-    
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
@@ -36,8 +37,40 @@
 
 
     <div id='cntNeoWebChat'></div>
+    <!-- Fin neotel -->
 
-   
+
+
+    <!--  inicio bot-->
+    <div class="minimizable-web-chat" id="DivMinimizableWebChatBtn">
+        <button class="maximize" onclick="AvatarMemoClick()">
+            <span class="red-dot">1</span>
+        </button>
+    </div>
+
+    <!-- <script type="text/javascript" src="./js/index.js"> -->
+    <script type="text/javascript">
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutationRecord) {
+                // console.log('style changed:',mutationRecord);
+                var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
+                var displayNeotel = $('#cntNeoWebChat')[0].style.display;
+                if (displayMemoMin == 'none' && displayNeotel == 'none') {
+                    $('#DivMinimizableWebChatBtn').css("display", "block");
+                }
+            });
+        });
+
+        var target = document.getElementById('cntNeoWebChat');
+        observer.observe(target, { attributes: true, attributeFilter: ['style'] });
+
+        function AvatarMemoClick() {
+            $('#cntNeoChat').draggable(); startNeoWebChat();
+
+            $('#DivMinimizableWebChatBtn').css("display", "none");
+        }
+    </script>
+    <!-- Fin bot-->
 </body>
 
 </html>
