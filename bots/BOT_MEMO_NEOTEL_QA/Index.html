@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo Neotel FE</title>
+    <title>Asistente Virtual MEMO</title>
     <!--  inicio bot-->
     <link rel='stylesheet' href='./css/MinimizableWebChat.css' type='text/css' />
     <!-- fin bot -->
@@ -16,8 +16,8 @@
     <!-- fin neotel -->
 </head>
 
-<!-- <body style="background-image: url('./img/Captura.PNG');"> -->
-    <body >
+<body style="background-image: url('./img/Captura.PNG');">
+    <!-- <body > -->
 
 
 
@@ -53,28 +53,28 @@
         </button>
     </div>
 
-    <!-- <script type="text/javascript" src="./js/index.js"> -->
-    <script type="text/javascript">
-        var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutationRecord) {
-                // console.log('style changed:',mutationRecord);
-                var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
-                var displayNeotel = $('#cntNeoWebChat')[0].style.display;
-                if (displayMemoMin == 'none' && displayNeotel == 'none') {
-                    $('#DivMinimizableWebChatBtn').css("display", "block");
-                }
-            });
-        });
+    <script type="text/javascript" src="./js/index.js">
+    // <script type="text/javascript">
+    //     var observer = new MutationObserver(function (mutations) {
+    //         mutations.forEach(function (mutationRecord) {
+    //             // console.log('style changed:',mutationRecord);
+    //             var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
+    //             var displayNeotel = $('#cntNeoWebChat')[0].style.display;
+    //             if (displayMemoMin == 'none' && displayNeotel == 'none') {
+    //                 $('#DivMinimizableWebChatBtn').css("display", "block");
+    //             }
+    //         });
+    //     });
 
-        var target = document.getElementById('cntNeoWebChat');
-        observer.observe(target, { attributes: true, attributeFilter: ['style'] });
+    //     var target = document.getElementById('cntNeoWebChat');
+    //     observer.observe(target, { attributes: true, attributeFilter: ['style'] });
 
-        function AvatarMemoClick() {
-            $('#cntNeoChat').draggable(); startNeoWebChat();
+    //     function AvatarMemoClick() {
+    //         $('#cntNeoChat').draggable(); startNeoWebChat();
 
-            $('#DivMinimizableWebChatBtn').css("display", "none");
-        }
-    </script>
+    //         $('#DivMinimizableWebChatBtn').css("display", "none");
+    //     }
+    // </script> 
     <!-- Fin bot-->
 </body>
 
