@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo Neotel FE</title>
+    <title>Asistente Virtual MEMO</title>
     <!--  inicio bot-->
     <link rel='stylesheet' href='./css/MinimizableWebChat.css' type='text/css' />
     <!-- fin bot -->
     <!-- inicio neotel -->
-    <!-- <link rel='stylesheet' href='http://nt1.grupoprides.com/CHAT/css/webchat.css' type='text/css' /> -->
-    <link rel="stylesheet" href="https://gpbot.blob.core.windows.net/gpbot/CHAT/css/webchat.css" type='text/css'>
+    <link rel='stylesheet' href='https://nt1.grupoprides.com/CHAT/css/webchat.css' type='text/css' />
+    <!-- <link rel="stylesheet" href="https://gpbot.blob.core.windows.net/gpbot/CHAT/css/webchat.css" type='text/css'> -->
     <!-- <link rel="stylesheet" href="./css/webchatNeotel.css" type="text/css"> -->
     <!-- fin neotel -->
 </head>
 
-<!-- <body style="background-image: url('./img/Captura.PNG');"> -->
-    <body >
+<body style="background-image: url('./img/Captura.PNG');">
+    <!-- <body > -->
 
 
 
@@ -31,13 +31,12 @@
         integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
     <!-- <script src='//code.jquery.com/jquery-1.10.2.js'></script> -->
     <!-- <script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script> -->
-    <!-- <script src='http://nt1.grupoprides.com/chat/js/webchat.js'></script> -->
-    <script src="https://gpbot.blob.core.windows.net/gpbot/CHAT/js/webchat.js"></script>
+    <script src='https://nt1.grupoprides.com/chat/js/webchat.js'></script>
+    <!-- <script src="https://gpbot.blob.core.windows.net/gpbot/CHAT/js/webchat.js"></script> -->
     <!-- <script src="./js/webchatNeotel.js"></script> -->
     <script type='text/javascript' language='javascript'>
         $(document).ready(function () {
-            initWebChat("http", "nt1.grupoprides.com", "CHAT", "3Hlser5a8Z21YCaDH2Ph49WcEWrLNKhZ1TFBu8gWjJTzd/PFTjEF06ddrdS7vBEzpBWtzvYICeN7Jhgnz1OwMmCX46MbNgXqCMeMcsOqlsyjVyoJlR1RpcmIH4yk5/Vfmg2K1ouDJj/1moGBXSA6VG8hcRTG6CzMjQDEz/sA3Pk=", "CHAT", "#8FAADC", "448", "401", "4");
-            //initWebChat("https", "grupoprides.github.io/BotsQA", "bots/BOT_MEMO_NEW/js/webchatNeotel.js", "3Hlser5a8Z21YCaDH2Ph49WcEWrLNKhZ1TFBu8gWjJTzd/PFTjEF06ddrdS7vBEzpBWtzvYICeN7Jhgnz1OwMmCX46MbNgXqCMeMcsOqlsyjVyoJlR1RpcmIH4yk5/Vfmg2K1ouDJj/1moGBXSA6VG8hcRTG6CzMjQDEz/sA3Pk=", "CHAT", "#8FAADC", "448", "401", "4");
+            initWebChat("https", "nt1.grupoprides.com", "CHAT", "3Hlser5a8Z21YCaDH2Ph49WcEWrLNKhZ1TFBu8gWjJTzd/PFTjEF06ddrdS7vBEzpBWtzvYICeN7Jhgnz1OwMmCX46MbNgXqCMeMcsOqlsyjVyoJlR1RpcmIH4yk5/Vfmg2K1ouDJj/1moGBXSA6VG8hcRTG6CzMjQDEz/sA3Pk=", "Asistente Virtual MEMO", "#8FAADC", "448", "401", "4");
         });
     </script>
 
@@ -54,28 +53,28 @@
         </button>
     </div>
 
-    <!-- <script type="text/javascript" src="./js/index.js"> -->
-    <script type="text/javascript">
-        var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutationRecord) {
-                // console.log('style changed:',mutationRecord);
-                var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
-                var displayNeotel = $('#cntNeoWebChat')[0].style.display;
-                if (displayMemoMin == 'none' && displayNeotel == 'none') {
-                    $('#DivMinimizableWebChatBtn').css("display", "block");
-                }
-            });
-        });
+    <script type="text/javascript" src="./js/index.js">
+    // <script type="text/javascript">
+    //     var observer = new MutationObserver(function (mutations) {
+    //         mutations.forEach(function (mutationRecord) {
+    //             // console.log('style changed:',mutationRecord);
+    //             var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
+    //             var displayNeotel = $('#cntNeoWebChat')[0].style.display;
+    //             if (displayMemoMin == 'none' && displayNeotel == 'none') {
+    //                 $('#DivMinimizableWebChatBtn').css("display", "block");
+    //             }
+    //         });
+    //     });
 
-        var target = document.getElementById('cntNeoWebChat');
-        observer.observe(target, { attributes: true, attributeFilter: ['style'] });
+    //     var target = document.getElementById('cntNeoWebChat');
+    //     observer.observe(target, { attributes: true, attributeFilter: ['style'] });
 
-        function AvatarMemoClick() {
-            $('#cntNeoChat').draggable(); startNeoWebChat();
+    //     function AvatarMemoClick() {
+    //         $('#cntNeoChat').draggable(); startNeoWebChat();
 
-            $('#DivMinimizableWebChatBtn').css("display", "none");
-        }
-    </script>
+    //         $('#DivMinimizableWebChatBtn').css("display", "none");
+    //     }
+    // </script> 
     <!-- Fin bot-->
 </body>
 
