@@ -12,31 +12,22 @@
     <!-- inicio neotel -->
     <link rel='stylesheet' href='https://nt1.grupoprides.com/CHAT/css/webchat.css' type='text/css' />
     <!-- <link rel="stylesheet" href="https://gpbot.blob.core.windows.net/gpbot/CHAT/css/webchat.css" type='text/css'> -->
-    <!-- <link rel="stylesheet" href="./css/webchatNeotel.css" type="text/css"> -->
     <!-- fin neotel -->
 </head>
 
 <body style="background-image: url('./img/Captura.PNG');">
     <!-- <body > -->
 
-
-
-
     <!-- inicio neotel -->
-    <!-- <button onclick="$('#cntNeoChat').draggable();startNeoWebChat();">click me</button>
-    <a href="javascript:startNeoWebChat();$('#cntNeoChat').draggable();">click me</a> -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
         integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
-    <!-- <script src='//code.jquery.com/jquery-1.10.2.js'></script> -->
-    <!-- <script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script> -->
     <script src='https://nt1.grupoprides.com/chat/js/webchat.js'></script>
     <!-- <script src="https://gpbot.blob.core.windows.net/gpbot/CHAT/js/webchat.js"></script> -->
-    <!-- <script src="./js/webchatNeotel.js"></script> -->
     <script type='text/javascript' language='javascript'>
         $(document).ready(function () {
-            initWebChat("https", "nt1.grupoprides.com", "CHAT", "3Hlser5a8Z21YCaDH2Ph49WcEWrLNKhZ1TFBu8gWjJTzd/PFTjEF06ddrdS7vBEzpBWtzvYICeN7Jhgnz1OwMmCX46MbNgXqCMeMcsOqlsyjVyoJlR1RpcmIH4yk5/Vfmg2K1ouDJj/1moGBXSA6VG8hcRTG6CzMjQDEz/sA3Pk=", "Asistente Virtual MEMO", "#8FAADC", "448", "401", "4");
+            initWebChat("https", "nt1.grupoprides.com", "CHAT", "3Hlser5a8Z21YCaDH2Ph49WcEWrLNKhZ1TFBu8gWjJTzd/PFTjEF06ddrdS7vBEzpBWtzvYICeN7Jhgnz1OwMmCX46MbNgXqCMeMcsOqlsyjVyoJlR1RpcmIH4yk5/Vfmg2K1ouDJj/1moGBXSA6VG8hcRTG6CzMjQDEz/sA3Pk=", "Memo - En línea", "#1277EB", "448", "401", "4");
         });
     </script>
 
@@ -53,28 +44,28 @@
         </button>
     </div>
 
-    <script type="text/javascript" src="./js/index.js">
-    // <script type="text/javascript">
-    //     var observer = new MutationObserver(function (mutations) {
-    //         mutations.forEach(function (mutationRecord) {
-    //             // console.log('style changed:',mutationRecord);
-    //             var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
-    //             var displayNeotel = $('#cntNeoWebChat')[0].style.display;
-    //             if (displayMemoMin == 'none' && displayNeotel == 'none') {
-    //                 $('#DivMinimizableWebChatBtn').css("display", "block");
-    //             }
-    //         });
-    //     });
+    <!-- <script type="text/javascript" src="./js/index.js"> -->
+    <script type="text/javascript">
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutationRecord) {
+                // console.log('style changed:',mutationRecord);
+                var displayMemoMin = $('#DivMinimizableWebChatBtn')[0].style.display;
+                var displayNeotel = $('#cntNeoWebChat')[0].style.display;
+                if (displayMemoMin == 'none' && displayNeotel == 'none') {
+                    $('#DivMinimizableWebChatBtn').css("display", "block");
+                }
+            });
+        });
 
-    //     var target = document.getElementById('cntNeoWebChat');
-    //     observer.observe(target, { attributes: true, attributeFilter: ['style'] });
+        var target = document.getElementById('cntNeoWebChat');
+        observer.observe(target, { attributes: true, attributeFilter: ['style'] });
 
-    //     function AvatarMemoClick() {
-    //         $('#cntNeoChat').draggable(); startNeoWebChat();
+        function AvatarMemoClick() {
+            $('#cntNeoChat').draggable(); startNeoWebChat();
 
-    //         $('#DivMinimizableWebChatBtn').css("display", "none");
-    //     }
-    // </script> 
+            $('#DivMinimizableWebChatBtn').css("display", "none");
+        }
+    </script>
     <!-- Fin bot-->
 </body>
 
