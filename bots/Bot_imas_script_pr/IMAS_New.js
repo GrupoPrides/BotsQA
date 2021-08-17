@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //se agrega en el body el script al bundle min
     var s3 = document.createElement("script");
     s3.type = "text/javascript";
-    s3.src = "./index_bundle.js";
+    s3.src = "https://respaldosautomaticos.blob.core.windows.net/imas/index_bundle_wc_k360.js";
     document.body.appendChild(s3);
     clearInterval(window.cookie_check_interval);
   } else {
