@@ -136,14 +136,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }else if(WIMB.detect.cookies_third_party.enabled() == true) {
         if(flagEmviroment == 'k360')
         {
-          var s1 = document.createElement("script");
-          var s2 = document.createElement("script");
-          s1.src = "https://unpkg.com/adaptivecards/dist/adaptivecards.min.js";
-          s2.src = "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js";
-          document.head.appendChild(s1);
-          document.head.appendChild(s2);
+          // var s1 = document.createElement("script");
+          // var s2 = document.createElement("script");
+          // s1.src = "https://unpkg.com/adaptivecards/dist/adaptivecards.min.js";
+          // s2.src = "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js";
+          // document.head.appendChild(s1);
+          // document.head.appendChild(s2);
 
-          
+
           var div = document.createElement('div');
           div.setAttribute('id','div_bot_root_botk360');
           div.setAttribute('role','main');
