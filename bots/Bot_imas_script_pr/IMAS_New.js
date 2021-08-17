@@ -3,9 +3,8 @@ var style = document.createElement('style');
 var third_party_domain = "webbrowsertests.com";
 var span;
 var modal;
-var flagEmviroment = 'k360';
-//import {bundle} from './index_bundle.js';
-//var flagEmviroment = 'LivePerson';
+//var flagEmviroment = 'k360';
+var flagEmviroment = 'LivePerson';
 style.innerHTML = `
 #cookie-law { 
     width:100%;
