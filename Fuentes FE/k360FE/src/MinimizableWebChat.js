@@ -41,8 +41,9 @@ import $ from "jquery";
       }
     }
   })();
+  
   /*--------------------------------------------------
-    Fin Fución para monitorear el dom
+    Fin Fuctión para monitorear el dom
     --------------------------------------------------*/
 
 export default class extends React.Component {
