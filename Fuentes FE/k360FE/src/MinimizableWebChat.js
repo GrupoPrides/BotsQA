@@ -19,7 +19,7 @@ import 'core-js/fn/string/starts-with';
 import $ from "jquery";
 
   /*--------------------------------------------------
-  Fución para monitorear el dom
+  Fución para monitorear el dom --------------
   --------------------------------------------------*/
   const _observeDOM = (() => {
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
@@ -41,7 +41,7 @@ import $ from "jquery";
       }
     }
   })();
-  
+
   /*--------------------------------------------------
     Fin Fuctión para monitorear el dom
     --------------------------------------------------*/
