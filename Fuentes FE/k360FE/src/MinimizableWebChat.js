@@ -43,7 +43,7 @@ import $ from "jquery";
   })();
 
   /*--------------------------------------------------
-    Fin Fuctión para monitorear el dom
+    Fin Fuctión para monitorear el dom ---------------
     --------------------------------------------------*/
 
 export default class extends React.Component {
