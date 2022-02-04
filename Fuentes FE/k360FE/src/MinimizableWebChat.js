@@ -18,12 +18,19 @@ import 'core-js/fn/string/starts-with';
 //import { fetch as fetchPolyfill } from 'whatwg-fetch';
 import $ from "jquery";
 
+<<<<<<< HEAD
   /*
   ===================================================================
   ================================ Función para monitorear el dom
   ===================================================================
   */
   /*const _observeDOM = (() => {
+=======
+  /*--------------------------------------------------
+  Fución para monitorear el dom limberth
+  --------------------------------------------------*/
+  const _observeDOM = (() => {
+>>>>>>> f328b7822f980c2baf1f62d4a979a6db636cc349
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
       eventListenerSupported = window.addEventListener;
 
