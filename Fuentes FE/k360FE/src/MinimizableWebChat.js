@@ -18,10 +18,12 @@ import 'core-js/fn/string/starts-with';
 //import { fetch as fetchPolyfill } from 'whatwg-fetch';
 import $ from "jquery";
 
-  /*--------------------------------------------------
-  Fución para monitorear el dom ----------------------
-  --------------------------------------------------*/
-  const _observeDOM = (() => {
+  /*
+  ===================================================================
+  ================================ Función para monitorear el dom
+  ===================================================================
+  */
+  /*const _observeDOM = (() => {
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
       eventListenerSupported = window.addEventListener;
 
@@ -40,11 +42,13 @@ import $ from "jquery";
         obj.addEventListener('DOMNodeRemoved', callback, false);
       }
     }
-  })();
+  })();*/
 
-  /*--------------------------------------------------
-    Fin Fuctión para monitorear el dom ---------------
-    --------------------------------------------------*/
+  /*
+  ===================================================================
+  ================================ Fin función para monitorear el dom
+  ===================================================================
+  */
 
 export default class extends React.Component {
   constructor(props) {
@@ -134,8 +138,9 @@ export default class extends React.Component {
         method: 'POST', // or 'PUT'
         headers: {
           // 'Authorization': 'Bearer ' + directLine,
-          // 'Authorization': 'Bearer ' + '7VY3G2mPxeU.YZ4lQJIMn7yYBepbRdoMGXrsSygsNEQLCkEmpwG8Os8', //k360 qa
-           'Authorization': 'Bearer ' + 's6V9oh5Qswg.5btcquRrDmjTm-RiQ8B9u976bHnpYg3GhZVVIWxRD5w',//k360 pr
+          'Authorization': 'Bearer ' + '7VY3G2mPxeU.YZ4lQJIMn7yYBepbRdoMGXrsSygsNEQLCkEmpwG8Os8', //k360 qa
+          
+          // 'Authorization': 'Bearer ' + 's6V9oh5Qswg.5btcquRrDmjTm-RiQ8B9u976bHnpYg3GhZVVIWxRD5w',//k360 pr
           // 'Authorization': 'Bearer ' + 'siygcKCKRTc.eMzwi2AtkhsqNZ_UqXGxSiC3nwgQSX_OH8WLZKGKFLw',//Zury pr3
           // 'Authorization': 'Bearer ' + 'XvG55ggsnZQ.rOnaYa08MBrov5ze0rRijUBfL27Z2i3-APn441Hqs5Q',//Zury pr5
           // 'Authorization': 'Bearer ' + 'HxA7QW40mNs.kBEvFEYbHXGm4Qf-5eDBjAfNhVWhV6AtBnJBt62dvJI',//bot imas k360-XX
@@ -236,7 +241,7 @@ export default class extends React.Component {
       const btn = webchatDiv.firstChild.lastElementChild;
 
       // Observe a specific dom element: 
-      _observeDOM(scrollDiv, function () {
+      /*_observeDOM(scrollDiv, function () {
         //aca baja el scroll
         scrollDiv.scroll({ top: scrollDiv.scrollHeight, behavior: 'smooth' });        
         //scrollDiv.scrollTop = scrollDiv.scrollHeight;
@@ -253,7 +258,7 @@ export default class extends React.Component {
           e.preventDefault();
           return false;
         }
-      });
+      });*/
     }
     return (
       <div className="minimizable-web-chat">
