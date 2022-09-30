@@ -4,8 +4,6 @@ var third_party_domain = "webbrowsertests.com";
 var span;
 var modal;
 var flagEmviroment = 'k360';
-//var flagEmviroment = 'signalR_PR';
-//var flagEmviroment = 'signalR_QA';
 //var flagEmviroment = 'LivePerson';
 style.innerHTML = `
 #cookie-law { 
@@ -76,8 +74,6 @@ document.head.appendChild(style);
 
 
 window.onload = function() {
-
-  document.getElementById('h1ApuntaInfo').innerHTML = 'script IMAS local apuntando a ' + flagEmviroment;
     if(!navigator.cookieEnabled) {
       createModal();
       modal = document.getElementById("myModal");
@@ -127,25 +123,7 @@ function createModal(){
 }
 document.addEventListener("DOMContentLoaded", function (event) {
 
-  if (flagEmviroment == 'signalR_QA' || flagEmviroment == 'signalR_PR') {  
-    let url = 'https://respaldosautomaticos.blob.core.windows.net/imas/index_bundle_signalR_PR.js';
-    if (flagEmviroment == 'signalR_QA') {
-      url = 'https://respaldosautomaticos.blob.core.windows.net/imas/index_bundle_signalR_QA.js';
-    }  
-    //Debe agregar los links al head
-    let scriptSignalRBundle = document.createElement("script");
-    scriptSignalRBundle.type = "text/javascript";
-    scriptSignalRBundle.src = url;
-    document.head.appendChild(scriptSignalRBundle);
-    
-    //debe crear el div del bot
-    var div = document.createElement('div');
-    div.setAttribute('id', 'root_signalR');
-    div.setAttribute('role', 'main');
-    document.body.appendChild(div);
-    clearInterval(window.cookie_check_interval);
-  }
-  else if (flagEmviroment == 'k360') {
+  if (flagEmviroment == 'k360') {
     //Debe agregar los links al head
     var s1 = document.createElement("script");
     var s2 = document.createElement("script");
