@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test conector</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <form action="">
+
+        <div class="row">
+
+            <div class="column">
+
+                <div class="divStyles">
+                    <label for="txtFrom">Identificador emisor(From):</label>
+                    <input type="text" id="txtFrom" placeholder="Ingrese su nombre">
+                </div>
+                <div class="divStyles">
+                    <label for="txtTexto">Mensaje para el bot:</label>
+                    <input type="text" id="txtTexto" placeholder="Hola Memo">
+                </div>
+                <div class="divStyles">
+                    <button type="button" onclick="SendMessageToBotMemo()" id="btnSend">Enviar</button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="divStyles">
+                    <label for="txtOutJson">Último JSON respondido:</label>
+                    <textarea id="txtOutJson" disabled rows="8"></textarea>
+                </div>
+                <div class="divStyles">
+                    <label for="txtOut">Historial de Conversación:</label>
+                    <textarea id="txtOut" disabled rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="footer">
+        <p>Dev by Limberth Vásquez</p>
+    </div>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
