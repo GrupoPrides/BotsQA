@@ -1,58 +1,38 @@
 'use strict';
 
+//global data
+let url = 'https://connapineotel.azurewebsites.net/api/Message';
+let convId = "";
+let from = "";
 const inputFrom = document.getElementById('txtFrom');
 const inputText = document.getElementById('txtTexto');
 const outputText = document.getElementById('txtOut');
 const outputTextJson = document.getElementById('txtOutJson');
 
-//global data
-let url = 'https://connapineotel.azurewebsites.net/api/Message';
-let convId = "";
-
-const ValidaInput = (pFrom, pTexto) => {
+const ValidateInputs = (pFrom, pTexto) => {
     if (pFrom == '' || pFrom == undefined || pFrom == null) {
-        alert('Ingrete su From.');
+        alert('Ingrese su From.');
         return false;
     }
     if (pTexto == '' || pTexto == undefined || pTexto == null) {
-        alert('Ingrete su mensaje.');
+        alert('Ingrese su mensaje.');
         return false;
     }
     return true;
 };
 
 const SendMessageToBotMemo = async () => {
-
     let valText = inputText.value;
     let valFrom = inputFrom.value;
-    if (ValidaInput(valFrom, valText) == false) {
+    if (ValidateInputs(valFrom, valText) == false) {
         return;
     }
-
-    ConcatenarMsj(valFrom + ": " + valText);
-
-
-    var raw = JSON.stringify({
-        "text": valText,
-        "campaignCode": "123",
-        "conversationId": convId,
-        "from": valFrom,
-        "channel": "webchat"
-    });
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    SendRequestHttp(requestOptions);
-
+    ValidateNewFrom(valFrom);
+    ConcatMsj(valFrom + ": " + valText);
+    SendRequestHttp(CreateRequestoptions(valText));
 }
 
-const SendRequestHttp = async (pRequestOptions) =>{
+const SendRequestHttp = async (pRequestOptions) => {
     await fetch(url, pRequestOptions)
         .then(async response => {
             const isJson = response.headers.get('content-type')?.includes('application/json');
@@ -65,21 +45,56 @@ const SendRequestHttp = async (pRequestOptions) =>{
                 return Promise.reject(error);
             }
 
-            ConcatenarJson(data);
+            ConcatJson(data);
             convId = data.conversationId;
-            ConcatenarMsj( 'Bot: ' + data.text);
+            ConcatMsj('Bot: ' + data.text);
 
         }).catch(error => {
             console.log('error', error);
         });
 };
 
-const ConcatenarMsj = (msj) => {
+const ConcatMsj = (msj) => {
     outputText.innerHTML += msj + "\n\n";
     outputText.scrollTop = outputText.scrollHeight;
 }
 
-const ConcatenarJson = (data) => {    
+const ConcatJson = (data) => {
     outputTextJson.innerHTML = JSON.stringify(data);;
     outputTextJson.scrollTop = outputTextJson.scrollHeight;
 }
+
+const ValidateNewFrom = (valFrom) => {
+    if (valFrom != from) {
+        from = valFrom;
+        convId = "";
+        outputText.innerHTML = '';
+    }
+};
+
+const CreateJsonToRequest = (pValText) => {
+    var raw = JSON.stringify({
+        "text": pValText,
+        "campaignCode": "123",
+        "conversationId": convId,
+        "from": from,
+        "channel": "webchat"
+    });
+    return raw;
+};
+
+const CreateRequestoptions = (pValText) => {
+    let JsonRaw = CreateJsonToRequest(pValText);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: JsonRaw,
+        redirect: 'follow'
+    };
+
+    return requestOptions;
+};
