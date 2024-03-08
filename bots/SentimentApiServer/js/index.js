@@ -1,7 +1,6 @@
 'use strict';
 
 //global data
-let key = 'a6812dfa03a244d4ae5f0a66a4000378';
 let url = 'https://sentapisapimgmt.azure-api.net/sent';
 const selectInput = document.getElementById('sltMethodsApi');
 const divAudioFile = document.getElementById('divAudioFile');
@@ -13,6 +12,7 @@ const txtTexto = document.getElementById('txtTexto');
 const outputTextJson = document.getElementById('txtOutJson');
 const loader = document.getElementById('loader');
 const txtEndpoint = document.getElementById('txtEndpoint');
+const txtKey = document.getElementById('txtKey');
 
 
 const ResetUrl = () => {
@@ -65,6 +65,11 @@ const ShowInputs = () => {
 
 };
 const ValidateInputs = (pvalFile, pvalText) => {
+    
+    if (txtKey.value == '' || txtKey.value == undefined || txtKey.value == null) {
+        alert('Ingrese su SecretKey.');
+        return false;
+    }
     if (!divAudioFile.hidden && (pvalFile == '' || pvalFile == undefined || pvalFile == null)) {
         alert('Ingrese su audio.');
         return false;
@@ -126,7 +131,7 @@ const CreateJsonToRequest = (pValText) => {
 };
 const CreatePOSTRequestoptions = (pValText) => {
     var myHeaders = new Headers();
-    myHeaders.append("ocp-apim-subscription-key", key);
+    myHeaders.append("ocp-apim-subscription-key", txtKey.value);
 
 
     if (!divAudioFile.hidden) {
@@ -162,7 +167,7 @@ const CreatePOSTRequestoptions = (pValText) => {
 const CreateGETRequestoptions = () => {
     const myHeaders = new Headers();
     myHeaders.append("Accept", "application/json");
-    myHeaders.append("ocp-apim-subscription-key", key);
+    myHeaders.append("ocp-apim-subscription-key", txtKey.value);
 
     const requestOptions = {
         method: "GET",
