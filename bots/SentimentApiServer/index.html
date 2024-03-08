@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Api Server</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <form action="">
+        <div class="row">
+            <div class="column">
+                <div class="divStyles">
+                    <label for="txtFrom">Método del api</label>
+                    <select onchange="ShowInputs()" id="sltMethodsApi">
+                        <option value="">--SELECCIONE--</option>
+                        <optgroup label="audio">
+                            <option value="/audio/transcribe?language=es&out_format=json">Transcripción de audio a texto.</option>
+                            <option value="/audio/full_analysis?language=es&out_format=json">Analisis completo de audio a texto.</option>
+                        </optgroup>
+                        <optgroup label="text">
+                            <option value="/analyze/keywords?out_format=json">Generacion de palabras claves de un texto</option>
+                            <option value="/analyze/sentiment?out_format=json">Analisis de Sentimiento de un texto mediante IA</option>
+                            <option value="/analyze/topic?out_format=json">Detección del tema de un texto</option>
+                            <option value="/analyze/resume?out_format=json">Resumen de un texto</option>                            
+                        </optgroup>
+                        <option value="/version">Obtener la versión del API.</option>
+                        <option value="/errors">Obtener lista con los Errores que puede reportar el API.</option>
+                    </select>
+                </div>
+                <div class="divStyles" id="divAudioFile" hidden>
+                    <label for="txtTexto">Audio:</label>
+                    <input type="file" id="txtFile" accept="audio/*">
+                </div>
+                <div class="divStyles" id="divTexto" hidden>
+                    <label for="txtTexto">Mensaje texto:</label>
+                    <textarea rows="8" id="txtTexto" placeholder="Hola mundo!..."></textarea>
+                </div>
+                <div class="divStyles" id="divBtnEnviar" hidden>
+                    <button type="button" onclick="SendMessageToSentimentApiServer()" id="btnSend">Enviar</button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="divStyles">
+                    <label id="txtEndpoint">Endpoint api:</label>
+                    <br/>
+                    <br/>
+                    <label for="txtOutJson">JSON respondido por api:</label>
+                    <textarea id="txtOutJson" disabled rows="35"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+<div id="loader" hidden></div>
+    <div class="footer">
+        <p>Dev by Limberth Vásquez | Prides S.A.</p>
+    </div>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
