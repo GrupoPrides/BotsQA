@@ -60,7 +60,7 @@ const ConcatMsj = (msj) => {
 }
 
 const ConcatJson = (data) => {
-    outputTextJson.innerHTML = JSON.stringify(data);;
+    outputTextJson.innerHTML = JSON.stringify(data, undefined, 4);;
     outputTextJson.scrollTop = outputTextJson.scrollHeight;
 }
 
