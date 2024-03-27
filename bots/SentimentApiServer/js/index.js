@@ -22,40 +22,39 @@ const ResetUrl = () => {
     txtTexto.value = '';
     txtEndpoint.innerHTML = 'Endpoint api:';
 };
-
 const ShowInputs = () => {
 
     if (selectInput.value.startsWith("/audio")) {
         divTexto.hidden = true;
         divAudioFile.hidden = false;
         divBtnEnviar.hidden = false;
-        
+
         ResetUrl();
         url += selectInput.value;
-    } else if (selectInput.value.startsWith("/analyze")){
+    } else if (selectInput.value.startsWith("/analyze")) {
         divTexto.hidden = false;
         divBtnEnviar.hidden = false;
         divAudioFile.hidden = true;
-        
+
         ResetUrl();
         url += selectInput.value;
-        
-    } else if (selectInput.value.startsWith("/version")){
+
+    } else if (selectInput.value.startsWith("/version")) {
         divBtnEnviar.hidden = false;
         divTexto.hidden = true;
         divAudioFile.hidden = true;
-        
+
         ResetUrl();
         url += selectInput.value;
-        
-    } else if (selectInput.value.startsWith("/errors")){
+
+    } else if (selectInput.value.startsWith("/errors")) {
         divBtnEnviar.hidden = false;
         divTexto.hidden = true;
         divAudioFile.hidden = true;
-        
+
         ResetUrl();
         url += selectInput.value;
-        
+
     } else {
         divTexto.hidden = true;
         divAudioFile.hidden = true;
@@ -65,7 +64,7 @@ const ShowInputs = () => {
 
 };
 const ValidateInputs = (pvalFile, pvalText) => {
-    
+
     if (txtKey.value == '' || txtKey.value == undefined || txtKey.value == null) {
         alert('Ingrese su SecretKey.');
         return false;
@@ -91,8 +90,8 @@ const SendMessageToSentimentApiServer = async () => {
     if (ValidateInputs(valFile, valText) == false) {
         return;
     }
-    
-    if (!divAudioFile.hidden || !divTexto.hidden) {        
+
+    if (!divAudioFile.hidden || !divTexto.hidden) {
         SendRequestHttp(CreatePOSTRequestoptions(valText));
     } else {
         SendRequestHttp(CreateGETRequestoptions(valText));
@@ -147,10 +146,10 @@ const CreatePOSTRequestoptions = (pValText) => {
             body: formdata,
             redirect: 'follow'
         };
-    
+
         return requestOptions;
 
-    } else  if (!divTexto.hidden) {
+    } else if (!divTexto.hidden) {
         myHeaders.append("Content-Type", "application/json");
         let JsonRaw = CreateJsonToRequest(pValText);
 
@@ -160,7 +159,7 @@ const CreatePOSTRequestoptions = (pValText) => {
             body: JsonRaw,
             redirect: 'follow'
         };
-    
+
         return requestOptions;
     }
 };
